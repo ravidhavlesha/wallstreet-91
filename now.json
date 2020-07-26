@@ -1,0 +1,12 @@
+{
+  "name": "wallstreet",
+  "version": 2,
+  "builds": [{ "src": "server/index.js", "use": "@now/node@canary" }],
+  "routes": [
+    {
+      "src": "/.*",
+      "dest": "/server/index.js"
+    }
+  ],
+  "github": { "silent": true }
+}
