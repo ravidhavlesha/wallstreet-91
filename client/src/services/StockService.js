@@ -1,6 +1,6 @@
 import socketClient from 'socket.io-client';
 
-const SOCKET_URL = process.env.SOCKET_URL || 'http://localhost:5000';
+const SOCKET_URL = process.env.SOCKET_URL || 'https://wallstreet-psi.vercel.app';
 
 console.log('ConsoleLog: SOCKET_URL', SOCKET_URL);
 
