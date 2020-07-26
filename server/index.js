@@ -18,7 +18,7 @@ app.use(helmet());
 const UPDATE_INTERVAL = process.env.UPDATE || 5000;
 updateStocks(UPDATE_INTERVAL);
 
-app.use(express.static('public'));
+app.use(express.static(path.resolve(__dirname, 'public')));
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'public/index.html'));
 });
