@@ -1,10 +1,10 @@
-import socketClient from 'socket.io-client';
+import io from 'socket.io-client';
 
 const SOCKET_URL = process.env.SOCKET_URL || 'https://wallstreet-psi.vercel.app';
 
 console.log('ConsoleLog: SOCKET_URL', SOCKET_URL);
 
-const socket = socketClient(SOCKET_URL);
+const socket = io(SOCKET_URL, { transports: ['websocket'] });
 
 function subscribeToStocks(email, callback) {
   // Instead of getting the email as argument, can be fetched here from local storage

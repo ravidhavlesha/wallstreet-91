@@ -9,17 +9,11 @@ const path = require('path');
 
 require('./utils/db-connection');
 
-const { fetchStocks, updateStocks /*createStocks*/ } = require('./services/stockService');
+const { fetchStocks, updateStocks } = require('./services/stockService');
 
 const app = express();
 app.use(helmet());
 
-// createStocks();
-
-// app.use(express.static(path.resolve(__dirname, 'public')));
-// app.get('*', (req, res) => {
-//   res.sendFile(path.resolve(__dirname, 'public/index.html'));
-// });
 app.use(express.static(path.resolve('client/build')));
 app.get('*', (req, res) => {
   res.sendFile(path.resolve('client/build/index.html'));
