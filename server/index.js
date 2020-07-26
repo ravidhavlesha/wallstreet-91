@@ -15,17 +15,15 @@ const app = express();
 app.use(helmet());
 
 // createStocks();
-const UPDATE_INTERVAL = process.env.UPDATE || 5000;
-updateStocks(UPDATE_INTERVAL);
 
-app.use(express.static(path.resolve(__dirname, 'public')));
-app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'public/index.html'));
-});
-// app.use(express.static('client/build'));
+// app.use(express.static(path.resolve(__dirname, 'public')));
 // app.get('*', (req, res) => {
-//   res.sendFile(path.resolve(__dirname, '/client/build/index.html'));
+//   res.sendFile(path.resolve(__dirname, 'public/index.html'));
 // });
+app.use(express.static('client/build'));
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve('client/build/index.html'));
+});
 
 const APP_NAME = process.env.APP_NAME || 'Wallstreet91';
 
@@ -42,6 +40,9 @@ let stockInterval = null;
 
 io.on('connection', (socket) => {
   console.log(`${APP_NAME} socket connection is established ID: ${socket.id}`);
+
+  const UPDATE_INTERVAL = process.env.UPDATE || 5000;
+  updateStocks(UPDATE_INTERVAL);
 
   // if (stockInterval) {
   //   clearInterval(stockInterval);
