@@ -24,7 +24,7 @@ function App() {
                   delete localStorage.email;
                   window.location.reload();
                 }}>
-                Logout
+                Reset Email
               </Button>
             </>
           ) : (
@@ -37,7 +37,7 @@ function App() {
                   localStorage.email = document.getElementById('email').value;
                   setShowStocks(true);
                 }}>
-                Login
+                Start
               </Button>
             </>
           )}

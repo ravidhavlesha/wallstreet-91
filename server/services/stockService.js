@@ -49,6 +49,7 @@ const updateStocks = async (interval) => {
   }
 };
 
+/* CreateStocks: Just for mocking stocks, might not be an ideal implementation */
 const createStocks = () => {
   try {
     const lastTradingTime = new Date();
@@ -67,7 +68,6 @@ const createStocks = () => {
       {
         LongName: 'INDUSIND BANK LTD.',
         LastTrdTime: lastTradingTime,
-        URL: 'https://www.bseindia.com/stock-share-price/indusind-bank-ltd/indusindbk/532187/',
         PercentChange: 1.61,
         Symbol: '532187',
         ScripName: 'INDUSINDBK',
