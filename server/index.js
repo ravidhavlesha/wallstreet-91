@@ -16,6 +16,9 @@ const app = express();
 app.use(cors());
 app.use(helmet());
 
+const UPDATE_INTERVAL = process.env.UPDATE || 5000;
+updateStocks(UPDATE_INTERVAL);
+
 app.use(express.static(path.resolve('client/build')));
 app.get('*', (req, res) => {
   res.sendFile(path.resolve('client/build/index.html'));
@@ -30,22 +33,12 @@ const server = app.listen(PORT, () => {
 
 const io = socket(server);
 
-// const FETCH_INTERVAL = process.env.FETCH_INTERVAL || 5000;
-
 let stockInterval = null;
 
 io.on('connection', (socket) => {
   console.log(`${APP_NAME} socket connection is established ID: ${socket.id}`);
 
-  const UPDATE_INTERVAL = process.env.UPDATE || 5000;
-  updateStocks(UPDATE_INTERVAL);
-
-  // if (stockInterval) {
-  //   clearInterval(stockInterval);
-  // }
-
   socket.on('fetch-stocks', (data) => {
-    // stockInterval = setInterval(() => fetchStocks(socket, data), FETCH_INTERVAL);
     fetchStocks(socket, data);
   });
 
