@@ -12,7 +12,7 @@ function subscribeToStocks(email, callback) {
   socket.on('stocks-fetched', (stocks) => callback(stocks));
   setInterval(() => {
     socket.emit('fetch-stocks', { email });
-  }, 5000);
+  }, 3000);
 }
 
 function unsubscribeToStocks() {
