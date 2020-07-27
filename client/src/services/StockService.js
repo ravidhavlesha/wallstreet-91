@@ -1,6 +1,6 @@
 import io from 'socket.io-client';
 
-const SOCKET_URL = process.env.SOCKET_URL || 'https://wallstreet-psi.vercel.app';
+const SOCKET_URL = 'http://arcane-lowlands-8408.herokuapp.com';
 
 console.log('ConsoleLog: SOCKET_URL', SOCKET_URL);
 
