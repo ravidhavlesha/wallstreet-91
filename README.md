@@ -3,7 +3,7 @@
 A realtime stock application which display user's selected stock and changes as the stock value changes.
 The stock changes are mocked programatically using random values.
 
-This system is built with **NodeJS**, **MongoDB**, **Socket.io**, **ReactJS** and is hosted on **Vercel**.
+This system is built with **NodeJS**, **MongoDB**, **Socket.io**, and **ReactJS**.
 
 ## Getting Started
 
