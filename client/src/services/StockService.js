@@ -1,6 +1,6 @@
 import io from 'socket.io-client';
 
-const SOCKET_URL = 'http://arcane-lowlands-8408.herokuapp.com';
+const SOCKET_URL = 'https://arcane-lowlands-8408.herokuapp.com';
 
 console.log('ConsoleLog: SOCKET_URL', SOCKET_URL);
 
