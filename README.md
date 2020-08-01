@@ -32,11 +32,20 @@ cp .env.example .env
 ```
 - Update the newly created `.env` file with your values.
 
+4. Client.
+```bash
+cd client
+npm install
+```
+
 ### Running the server locally.
 ```bash
 npm run dev
 ```
 ### Running the server as production.
 ```bash
+cd client
+npm run build
+cd ../
 npm run start
 ```
