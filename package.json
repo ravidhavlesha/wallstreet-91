@@ -10,7 +10,6 @@
     "start": "node server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Ravi Dhavlesha <ravidhavlesha@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
