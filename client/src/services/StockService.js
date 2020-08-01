@@ -1,6 +1,6 @@
 import io from 'socket.io-client';
 
-const SOCKET_URL = 'https://thawing-springs-77530.herokuapp.com';
+const SOCKET_URL = 'http://localhost:5000';
 
 console.log('ConsoleLog: SOCKET_URL', SOCKET_URL);
 
