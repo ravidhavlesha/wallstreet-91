@@ -6,17 +6,15 @@ const express = require('express');
 const helmet = require('helmet');
 const socket = require('socket.io');
 const path = require('path');
-const cors = require('cors');
 
 require('./utils/db-connection');
 
 const { fetchStocks, updateStocks } = require('./services/stockService');
 
 const app = express();
-app.use(cors());
 app.use(helmet());
 
-const UPDATE_INTERVAL = process.env.UPDATE || 5000;
+const UPDATE_INTERVAL = process.env.UPDATE_INTERVAL || 5000;
 updateStocks(UPDATE_INTERVAL);
 
 app.use(express.static(path.resolve('client/build')));
